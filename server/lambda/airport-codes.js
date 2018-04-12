@@ -31,12 +31,6 @@ module.exports.getSimilarTerminalCityName = function(myCity){
 	return cityMatches.bestMatch.target;
 }
 
-module.exports.getSimilarFlightType = function(myFlightType){
-	var flightMatches = stringSimilarity.findBestMatch(myFlightType, flightListTypes);
-	return flightMatches.bestMatch.target;
-}
-
-
 module.exports.getCodeFromCity = function(myCity){
  for(var i=0; i< config.airpotCodesList.length;i++){
  	if(config.airpotCodesList[i].cityName.toLowerCase() === myCity.toLowerCase())

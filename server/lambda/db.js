@@ -24,7 +24,7 @@ module.exports.saveVistaraData = function(courseData){
 
 module.exports.saveFlightss = function(myUserId){ 
   var params = {
-    TableName: 'tgc-dev-audio',
+    TableName: 'vistara-travel',
     Key: {
       'userId' : {S: myUserId},
     }
@@ -70,7 +70,6 @@ module.exports.getFlights = function(tgcUserId){
           console.error("Unable to get item. Error JSON:", JSON.stringify(err, null, 2));
           reject(err);
         } else {
-          console.log("getResumePostionUrl", JSON.stringify(data, null, 2));
           var unwrapped = attr.unwrap(data.Item);
           resolve(unwrapped);
         }
